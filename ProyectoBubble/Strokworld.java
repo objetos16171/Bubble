@@ -29,5 +29,7 @@ public class Strokworld extends World
     {
         Burbuja burbuja = new Burbuja();
         addObject(burbuja,297,72);
+        Conel conel = new Conel();
+        addObject(conel,222,341);
     }
 }

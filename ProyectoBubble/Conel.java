@@ -40,5 +40,15 @@ public class Conel extends Actor
         {
              setLocation(getX(),getY()+GRAVEDAD);
         }
+        explocion();
+    }
+    
+    public void explocion(){
+        if(isTouching(Burbuja.class))
+        {
+         removeTouching(Burbuja.class);   
+         setImage("conel_opt.png");
+         setLocation(getX(),getY()+GRAVEDAD);
+        }
     }
 }

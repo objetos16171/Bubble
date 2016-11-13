@@ -25,7 +25,11 @@ public class Burbuja extends Actor
     }
     public void act() 
     {
-       setLocation(getX()+velX,getY()+velY);
+       mover();
+    }    
+    
+    public void mover(){
+         setLocation(getX()+velX,getY()+velY);
         if(getX()<=50 || getX() >= 550 )
         {
             velX = -velX;
@@ -33,6 +37,6 @@ public class Burbuja extends Actor
         if(getY()<=50 || getY() >= 350)
         {
             velY = -velY;
-        } 
-    }    
+        }
+    }
 }
