@@ -40,5 +40,39 @@ public class Conel extends Actor
         {
              setLocation(getX(),getY()+GRAVEDAD);
         }
-    }
+        if(Greenfoot.isKeyDown("w"))
+        {
+            World mundo=getWorld();
+            Bala bala1=new Bala(1);
+            ((Strokworld)mundo).addObject(bala1,getX(),getY());
+        }
+        
+        if(Greenfoot.isKeyDown("a"))
+        {
+            World mundo=getWorld();
+            Bala bala1=new Bala(2);
+            ((Strokworld)mundo).addObject(bala1,getX(),getY());
+        }
+        if(Greenfoot.isKeyDown("d"))
+        {
+            World mundo=getWorld();
+            Bala bala1=new Bala(3);
+            ((Strokworld)mundo).addObject(bala1,getX(),getY());
+        }
+        
+        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("a") )
+        {
+            World mundo=getWorld();
+            Bala bala1=new Bala(4);
+            ((Strokworld)mundo).addObject(bala1,getX(),getY());
+        
+        }
+        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("d") )
+        {
+            World mundo=getWorld();
+            Bala bala1=new Bala(5);
+            ((Strokworld)mundo).addObject(bala1,getX(),getY());
+        
+        }
+}
 }

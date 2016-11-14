@@ -30,4 +30,6 @@ public class Strokworld extends World
         Burbuja burbuja = new Burbuja();
         addObject(burbuja,297,72);
     }
+    
+    
 }
