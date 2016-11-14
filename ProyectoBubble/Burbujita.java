@@ -1,14 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Burbuja1 here.
+ * Write a description of class Burbujita here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-
-public class Burbuja1 extends Actor
+public class Burbujita extends Actor
 {
+   
    private int velX;
     private int velY = 2;
     
@@ -17,12 +17,13 @@ public class Burbuja1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Burbuja1()
+    public Burbujita()
     {
         velX = Greenfoot.getRandomNumber(2) + 1;
         if (Greenfoot.getRandomNumber(2) == 0)
            velX = -1 * velX;
     }
+    
     public void act() 
     {
        setLocation(getX()+velX,getY()+velY);
@@ -34,14 +35,6 @@ public class Burbuja1 extends Actor
         {
             velY = -velY;
         } 
-        if(isTouching(Bala.class)){  
-            World mundo=getWorld();
-            Burbujita burbujita1 = new Burbujita();
-            Burbujita burbujita2 = new Burbujita();
-            
-            ((Strokworld)mundo).addObject(burbujita1,getX(),getY());
-            ((Strokworld)mundo).addObject(burbujita2,getX()+10,getY()+20);
-            
-        }
+        
     }  
 }
