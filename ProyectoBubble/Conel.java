@@ -12,27 +12,34 @@ public class Conel extends Actor
      * Act - do whatever the Conel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     public final int GRAVEDAD=5;
-     public final int MOV=2;
-     public final int SALTO=5;
+     public final int GRAVEDAD=8;
+     public final int MOV=4;
+     public final int SALTO=9;
+     private String conelI = "conel_opt2.png";
+     private String conelD = "conel_opt.png";
      
     public void act() 
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("up"))
         {
+            if(conelD == "conel_opt_jet.png")
+            {
+                conelD = "conel_opt_jetfire.png";
+                conelI = "conel_opt_jetfire2.png";
+            }
             setLocation(getX(),getY()-SALTO);  
         }
         
         if(Greenfoot.isKeyDown("left"))
         {
-            setImage("conel_opt2.png");
+            setImage(conelI);
             setLocation(getX()-MOV,getY());
         }
         
         if(Greenfoot.isKeyDown("right"))
         {
-            setImage("conel_opt.png");
+            setImage(conelD);
             setLocation(getX()+MOV,getY());
         }
         
@@ -74,6 +81,18 @@ public class Conel extends Actor
             Bala bala1=new Bala(5);
             ((Strokworld)mundo).addObject(bala1,getX(),getY());
         
+        }
+        
+        if(getY() > 380 && conelD == "conel_opt_jetfire.png")
+        {
+            conelI = "conel_opt_jet2.png";
+            conelD = "conel_opt_jet.png";
+        }
+        
+        if(isTouching(Jet.class))
+        {
+            conelD = "conel_opt_jet.png";
+            conelI = "conel_opt_jet2.png";
         }
 }
 }

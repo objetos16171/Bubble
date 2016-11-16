@@ -44,9 +44,14 @@ public class Bala extends Actor
         
     public void act() 
     {
-        if(isTouching(Burbuja1.class)|| isTouching(Burbujita.class)){
+        ////////////////////////////////////////////////////////////////
+        if(isTouching(Burbuja1.class)|| isTouching(MinBurbuja.class)|| isTouching(MiniBurbujita.class)){
             removeTouching(Burbuja1.class);   
-            removeTouching(Burbujita.class);
+            removeTouching(MinBurbuja.class);
+            removeTouching(MiniBurbujita.class);
+           
+            World mundo = getWorld();
+            ((Strokworld)mundo). incrementaPuntaje();
         }
         
         // Add your action code here.
