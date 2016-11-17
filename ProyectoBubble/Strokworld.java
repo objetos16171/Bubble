@@ -13,6 +13,7 @@ public class Strokworld extends World
     private Counter contTiempo;
     private SimpleTimer reloj;
     private SimpleTimer relojworm;
+   
     
     
     /**
@@ -25,7 +26,7 @@ public class Strokworld extends World
         super(600, 400, 1); 
         contBurbujas = new Counter("Puntaje: ");
         addObject(contBurbujas,57,15);
-
+        
         prepare();
         contTiempo.setValue(TIEMPO_NIVEL);
         reloj=new SimpleTimer();
@@ -34,6 +35,8 @@ public class Strokworld extends World
     }
 
      public void act(){
+         
+        
          if(reloj.millisElapsed()>1000){
         contTiempo.add(-1);
         reloj.mark();

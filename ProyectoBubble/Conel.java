@@ -17,6 +17,11 @@ public class Conel extends Actor
      public final int SALTO=9;
      private String conelI = "conel_opt2.png";
      private String conelD = "conel_opt.png";
+     private MouseInfo mouse;
+     private int infox;
+     private int infoy;
+     
+    
      
     public void act() 
     {
@@ -93,6 +98,12 @@ public class Conel extends Actor
         {
             conelD = "conel_opt_jet.png";
             conelI = "conel_opt_jet2.png";
+        }
+        
+        mouse=Greenfoot.getMouseInfo();
+        if(mouse !=null)
+        {
+            
         }
 }
 }
