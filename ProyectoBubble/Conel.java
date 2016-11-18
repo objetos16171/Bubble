@@ -102,8 +102,8 @@ public class Conel extends Actor
         
         mouse=Greenfoot.getMouseInfo();
         if(mouse !=null)
-        {
-            
+        {   World mundo=getWorld();
+            ((Strokworld)mundo).disparaarma(mouse.getX(),getX(),mouse.getY(),getY());
         }
 }
 }

@@ -11,4 +11,6 @@ comment3.target=void\ incrementaPuntaje()
 comment4.params=
 comment4.target=void\ prepare()
 comment4.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
-numComments=5
+comment5.params=xmouse\ x\ ymouse\ y
+comment5.target=void\ disparaarma(int,\ int,\ int,\ int)
+numComments=6

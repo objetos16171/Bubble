@@ -76,6 +76,11 @@ public class Strokworld extends World
         contTiempo = new Counter("Tiempo:");
         addObject(contTiempo,533,23);
     }
+    public void disparaarma(int xmouse,int x,int ymouse, int y)
+    {
+        int dir;
+        
+    }
     
     
 }
