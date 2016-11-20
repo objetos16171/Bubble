@@ -15,30 +15,24 @@ public class Bala extends Actor
      * Act - do whatever the Bala wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
-     private int dir;
+     private int dirx;
+     private int diry;
      private int vel=3;
      
      World mundo=getWorld();
      
      
-    public Bala(int direccion)
+    public Bala(int x,int y)
     {
     super();
-    dir=direccion;
-    if(dir==1)
-    {setRotation(270);
-    }
-    if(dir==2)
-    {setRotation(180);
-    }
-    if(dir==4)
-    {setRotation(225);
-    }
-    if(dir==5)
-    {setRotation(315);
-    }
     
+    turnTowards(x,y);
+    int rot;
+    rot=getRotation();
+    turn(-rot);
+    turn(((rot)*4)-90);
+    
+    System.out.println(getRotation());
     
     }
     
@@ -55,27 +49,8 @@ public class Bala extends Actor
             ((Strokworld)mundo). incrementaPuntaje();
         }
         
-        // Add your action code here.
-        if(dir==1)
-        {
-         setLocation(getX(),getY()-vel);
-        }
-        if(dir==2)
-        {
-         setLocation(getX()-vel,getY());
-        }
-         if(dir==3)
-        {
-         setLocation(getX()+vel,getY());
-        }
-        if(dir==4)
-        {
-         setLocation(getX()-vel,getY()-vel);
-        }
-        if(dir==5)
-        {
-         setLocation(getX()+vel,getY()+vel);
-        }
+        
+        
         
         if(getX()> 590 || getX()< 10 || 
         getY()> 390 || getY()< 10)
@@ -83,5 +58,6 @@ public class Bala extends Actor
           World mundo=getWorld();
           ((Strokworld)mundo).removeObject(this);
         }
+        move(vel);
     } 
 }

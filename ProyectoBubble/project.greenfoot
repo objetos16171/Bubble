@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Nov 17 20:57:56 CST 2016
+#Sun Nov 20 11:08:48 CST 2016
 target2.width=100
 editor.fx.0.height=700
 target8.name=Conel
@@ -72,7 +72,7 @@ dependency3.type=UsesDependency
 target6.type=ClassTarget
 target2.typeParameters=
 target2.height=50
-editor.swing.0.height=1056
+editor.swing.0.height=0
 dependency11.to=Counter
 class.Jet.superclass=greenfoot.Actor
 target9.typeParameters=
@@ -90,11 +90,11 @@ dependency6.to=Burbuja1
 target2.showInterface=false
 dependency1.from=Conel
 mainWindow.y=60
-editor.swing.0.y=-8
+editor.swing.0.y=0
 target5.showInterface=false
 mainWindow.x=250
 class.SimpleTimer.superclass=
-editor.swing.0.x=-8
+editor.swing.0.x=0
 dependency19.from=MinBurbuja
 dependency16.to=MinBurbuja
 target8.showInterface=false
@@ -103,7 +103,7 @@ target7.typeParameters=
 target2.name=SimpleTimer
 dependency9.from=Burbuja1
 readme.name=@README
-editor.swing.0.width=1936
+editor.swing.0.width=0
 target6.name=Nivel3
 target9.height=50
 dependency23.to=Counter

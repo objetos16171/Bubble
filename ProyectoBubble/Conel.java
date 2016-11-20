@@ -53,40 +53,7 @@ public class Conel extends Actor
              setLocation(getX(),getY()+GRAVEDAD);
         }
 
-        if(Greenfoot.isKeyDown("w"))
-        {
-            World mundo=getWorld();
-            Bala bala1=new Bala(1);
-            ((Strokworld)mundo).addObject(bala1,getX(),getY());
-        }
-        
-        if(Greenfoot.isKeyDown("a"))
-        {
-            World mundo=getWorld();
-            Bala bala1=new Bala(2);
-            ((Strokworld)mundo).addObject(bala1,getX(),getY());
-        }
-        if(Greenfoot.isKeyDown("d"))
-        {
-            World mundo=getWorld();
-            Bala bala1=new Bala(3);
-            ((Strokworld)mundo).addObject(bala1,getX(),getY());
-        }
-        
-        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("a") )
-        {
-            World mundo=getWorld();
-            Bala bala1=new Bala(4);
-            ((Strokworld)mundo).addObject(bala1,getX(),getY());
-        
-        }
-        if(Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("d") )
-        {
-            World mundo=getWorld();
-            Bala bala1=new Bala(5);
-            ((Strokworld)mundo).addObject(bala1,getX(),getY());
-        
-        }
+       
         
         if(getY() > 380 && conelD == "conel_opt_jetfire.png")
         {
@@ -103,7 +70,10 @@ public class Conel extends Actor
         mouse=Greenfoot.getMouseInfo();
         if(mouse !=null)
         {   World mundo=getWorld();
+            if(mouse.getClickCount()==1)
+            {
             ((Strokworld)mundo).disparaarma(mouse.getX(),getX(),mouse.getY(),getY());
+            }
         }
 }
 }
