@@ -44,8 +44,16 @@ public class MinBurbuja extends Burbuja1
             
             ((Strokworld)mundo).addObject(burbujita1,getX()+10,getY()+10);
             ((Strokworld)mundo).addObject(burbujita2,getX()-20,getY()+10);
-            ((Strokworld)mundo).addObject(burbujita3,getX()+5,getY()-20);
+            //((Strokworld)mundo).addObject(burbujita3,getX()+5,getY()-20);
             
+            removeTouching(Bala.class); 
         }
+        
+        if (isTouching(Conel.class))
+       {
+           World mundo = getWorld();
+           ((Strokworld)mundo).conelAtrapado();
+          
+       }
     }  
 }

@@ -11,8 +11,11 @@ public class Strokworld extends World
     public final int TIEMPO_NIVEL=200;
     private Counter contBurbujas;
     private Counter contTiempo;
+    private Counter contVidas;
     private SimpleTimer reloj;
     private SimpleTimer relojworm;
+    private Conel conel;
+    private Burbuja1 Burbuja;
    
     
     
@@ -25,7 +28,10 @@ public class Strokworld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         contBurbujas = new Counter("Puntaje: ");
-        addObject(contBurbujas,57,15);
+        addObject(contBurbujas,58,22);
+        contVidas = new Counter("Vidas: ");
+        addObject(contVidas,285,22);
+        contVidas.setValue(3);
         
         prepare();
         contTiempo.setValue(TIEMPO_NIVEL);
@@ -58,8 +64,29 @@ public class Strokworld extends World
             addObject(etiquetaWINNER,350,250);
   
             Greenfoot.stop();
+            
 
         }
+    }
+    
+    public void decrementaVidas()
+    {
+        contVidas.add(-1);
+        
+    }
+    
+    public void conelAtrapado(){
+        decrementaVidas();
+        //conel.setLocation(222,500);
+        //Burbuja.setLocation(15,87);
+        
+        if(contVidas.getValue()==0){
+            Label etiquetaFin = new Label("Game Over",55);
+            addObject(etiquetaFin,250,250);
+            Greenfoot.stop();
+        }
+
+    
     }
     
     

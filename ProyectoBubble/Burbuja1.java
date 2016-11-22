@@ -34,6 +34,7 @@ public class Burbuja1 extends Actor
         {
             velY = -velY;
         } 
+        
         if(isTouching(Bala.class)){  
             
             World mundo=getWorld();
@@ -43,7 +44,16 @@ public class Burbuja1 extends Actor
             
             ((Strokworld)mundo).addObject(burbujita1,getX()+20,getY()+6);
             ((Strokworld)mundo).addObject(burbujita2,getX()+20,getY()+10);
-            ((Strokworld)mundo).addObject(burbujita3,getX()-20,getY()-10);
+            //((Strokworld)mundo).addObject(burbujita3,getX()-20,getY()-10);
+            
+             removeTouching(Bala.class);   
         }
+        
+        if (isTouching(Conel.class))
+       {
+           World mundo = getWorld();
+           ((Strokworld)mundo).conelAtrapado();
+          
+       }
     }  
 }
