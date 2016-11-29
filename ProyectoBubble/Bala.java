@@ -18,6 +18,7 @@ public class Bala extends Actor
      private int dirx;
      private int diry;
      private int vel=3;
+     private int bandera=1;
      
      World mundo=getWorld();
      
@@ -25,21 +26,20 @@ public class Bala extends Actor
     public Bala(int x,int y)
     {
     super();
+    dirx=x;
+    diry=y;
     
-    turnTowards(x,y);
-    int rot;
-    rot=getRotation();
-    turn(-rot);
-    turn(((rot)*4)-90);
     
-    System.out.println(getRotation());
     
     }
     
         
     public void act() 
-    {
-        ////////////////////////////////////////////////////////////////
+    {   
+        turnTowards(dirx,diry);
+
+        
+
         if(isTouching(Burbuja1.class)|| isTouching(MinBurbuja.class)|| isTouching(MiniBurbujita.class)){
             removeTouching(Burbuja1.class);   
             removeTouching(MinBurbuja.class);
@@ -52,12 +52,31 @@ public class Bala extends Actor
         
         
         
-        if(getX()> 590 || getX()< 10 || 
-        getY()> 390 || getY()< 10)
+        if(getX()> 590 || getX()< 10 || getY()> 390 || getY()< 10 )
         {
-          World mundo=getWorld();
-          ((Strokworld)mundo).removeObject(this);
+          remuevebala();
+         //System.out.println("bala eliminada por borde");
         }
-        move(vel);
+		if(getX()<=(dirx+10) && getX()>=(dirx-10) )
+        {
+        	if( getY()<=(diry+10) && getY()>=(diry-10) )
+        	{
+        		if(bandera==1)
+        		{
+        		    remuevebala();
+        		    bandera=0;
+        		  }
+			
+        
+        	}
+        }
+       move(vel); 
     } 
+
+
+	public void remuevebala()
+	{
+		World mundo=getWorld();
+          ((Strokworld)mundo).removeObject(this);
+	}
 }
