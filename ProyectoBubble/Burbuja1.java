@@ -11,6 +11,7 @@ public class Burbuja1 extends Actor
 {
    private int velX;
     private int velY = 2;
+    private int i;
     
     /**
      * Act - do whatever the Burbuja wants to do. This method is called whenever
@@ -36,7 +37,6 @@ public class Burbuja1 extends Actor
         } 
         
         if(isTouching(Bala.class)){  
-            
             World mundo=getWorld();
             MinBurbuja burbujita1 = new MinBurbuja();
             MinBurbuja burbujita2 = new MinBurbuja();
@@ -52,7 +52,7 @@ public class Burbuja1 extends Actor
            ((Strokworld)mundo).conelAtrapado();
            Conel conel = new Conel ();
            ((Strokworld)mundo).addObject(conel,getX()+200,getY());
-        
+   
        }
     }  
 }

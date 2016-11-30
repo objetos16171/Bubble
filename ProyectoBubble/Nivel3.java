@@ -15,6 +15,7 @@ public class Nivel3 extends Strokworld
      */
     public Nivel3()
     {
+        Greenfoot.start();
         prepare();
     }
 

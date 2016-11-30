@@ -8,17 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Strokworld extends World 
 {
-    public final int TIEMPO_NIVEL=200;
+    public final int TIEMPO_NIVEL=60;
     private Counter contBurbujas;
     private Counter contTiempo;
     private Counter contVidas;
     private SimpleTimer reloj;
     private SimpleTimer relojworm;
-  
-  
-   
-    
-    
+    private Burbuja1 burbuja;
+    private vida vida;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -36,7 +33,7 @@ public class Strokworld extends World
         addObject(conel,322,375);
         Burbuja1 burbuja1 = new Burbuja1();
         addObject(burbuja1,289,109);
-        
+
         prepare();
         contTiempo.setValue(TIEMPO_NIVEL);
         reloj=new SimpleTimer();
@@ -52,20 +49,18 @@ public class Strokworld extends World
     }
         
         if(contTiempo.getValue()==0){
-           Label etiquetaTiempoFin = new Label("Tiempo Agotado",65);
-           addObject(etiquetaTiempoFin,329,249);
            Greenfoot.stop();
+          Greenfoot.setWorld(new GameOver());  
         }
     }
     
     public void incrementaPuntaje()
     {
         contBurbujas.add(1);
-  
+        
         if(contBurbujas.getValue()==7){
             Label etiquetaWINNER = new Label("WINNER:Conel",55);
             addObject(etiquetaWINNER,350,250);
-  
             Greenfoot.stop();
             Greenfoot.setWorld(new Nivel2());
 
@@ -75,6 +70,7 @@ public class Strokworld extends World
     public void decrementaVidas()
     {
         contVidas.add(-1);
+       removeObject(vida);
        
     }
     
@@ -82,17 +78,14 @@ public class Strokworld extends World
         decrementaVidas();
        
        if(contVidas.getValue()==0)
-       {
-            contVidas.setValue(0);
-            Label etiquetaFin = new Label("Game Over",55);
-            addObject(etiquetaFin,250,250);
-            Greenfoot.stop();
-            Greenfoot.setWorld(new Menu());
+       {   
+           contVidas.setValue(0);
+           Greenfoot.stop();
+           Greenfoot.setWorld(new GameOver());  
+            
         }
 
-    
     }
-    
     
     /**
      * Prepare the world for the start of the program.
@@ -102,6 +95,18 @@ public class Strokworld extends World
     {
         contTiempo = new Counter("Tiempo:");
         addObject(contTiempo,533,23);
+        vida vida = new vida();
+        addObject(vida,231,29);
+        vida vida2 = new vida();
+        addObject(vida2,285,35);
+        vida vida3 = new vida();
+        addObject(vida3,344,38);
+        vida.setLocation(234,19);
+        vida2.setLocation(277,20);
+        vida3.setLocation(320,20);
+        removeObject(vida3);
+        removeObject(vida2);
+        removeObject(vida);
     }
 
 

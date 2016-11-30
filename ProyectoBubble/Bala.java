@@ -38,8 +38,6 @@ public class Bala extends Actor
     {   
         turnTowards(dirx,diry);
 
-        
-
         if(isTouching(Burbuja1.class))
         {
             removeTouching(Burbuja1.class);
