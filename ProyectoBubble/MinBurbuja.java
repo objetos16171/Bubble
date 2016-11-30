@@ -39,21 +39,20 @@ public class MinBurbuja extends Burbuja1
             
             World mundo=getWorld();
             MiniBurbujita burbujita1 = new MiniBurbujita();
-            MiniBurbujita burbujita2 = new MiniBurbujita();
-            MiniBurbujita burbujita3 = new MiniBurbujita();
-            
+            MiniBurbujita burbujita2 = new MiniBurbujita(); 
             ((Strokworld)mundo).addObject(burbujita1,getX()+10,getY()+10);
             ((Strokworld)mundo).addObject(burbujita2,getX()-20,getY()+10);
-            //((Strokworld)mundo).addObject(burbujita3,getX()+5,getY()-20);
-            
-            removeTouching(Bala.class); 
+       
         }
         
         if (isTouching(Conel.class))
        {
+            removeTouching(Conel.class);
            World mundo = getWorld();
            ((Strokworld)mundo).conelAtrapado();
-          
+            Conel conel = new Conel ();
+           ((Strokworld)mundo).addObject(conel,getX()+200,getY());
+        
        }
     }  
 }

@@ -26,7 +26,7 @@ public class Burbuja1 extends Actor
     public void act() 
     {
        setLocation(getX()+velX,getY()+velY);
-        if(getX()<=50 || getX() >= 550 )
+        if(getX()<=50 || getX() >= 550)
         {
             velX = -velX;
         } 
@@ -40,20 +40,19 @@ public class Burbuja1 extends Actor
             World mundo=getWorld();
             MinBurbuja burbujita1 = new MinBurbuja();
             MinBurbuja burbujita2 = new MinBurbuja();
-            MinBurbuja burbujita3 = new MinBurbuja();
-            
+
             ((Strokworld)mundo).addObject(burbujita1,getX()+20,getY()+6);
-            ((Strokworld)mundo).addObject(burbujita2,getX()+20,getY()+10);
-            //((Strokworld)mundo).addObject(burbujita3,getX()-20,getY()-10);
-            
-             removeTouching(Bala.class);   
+            ((Strokworld)mundo).addObject(burbujita2,getX()+20,getY()+10);         
         }
         
         if (isTouching(Conel.class))
        {
+           removeTouching(Conel.class);
            World mundo = getWorld();
            ((Strokworld)mundo).conelAtrapado();
-          
+           Conel conel = new Conel ();
+           ((Strokworld)mundo).addObject(conel,getX()+200,getY());
+        
        }
     }  
 }

@@ -71,8 +71,8 @@ public class Conel extends Actor
         if(mouse !=null)
         {   World mundo=getWorld();
             if(mouse.getClickCount()==1)
-            {
-            ((Strokworld)mundo).disparaarma(mouse.getX(),getX(),mouse.getY(),getY());
+            {                 
+                     ((Strokworld)mundo).disparaarma(mouse.getX(),getX(),mouse.getY(),getY());
             }
         }
 }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Los tres Mosqueteros
  * @version 1.0 beta
  */
-public class Strokworld extends World
+public class Strokworld extends World 
 {
     public final int TIEMPO_NIVEL=200;
     private Counter contBurbujas;
@@ -14,8 +14,8 @@ public class Strokworld extends World
     private Counter contVidas;
     private SimpleTimer reloj;
     private SimpleTimer relojworm;
-    private Conel conel;
-    private Burbuja1 Burbuja;
+  
+  
    
     
     
@@ -32,6 +32,10 @@ public class Strokworld extends World
         contVidas = new Counter("Vidas: ");
         addObject(contVidas,285,22);
         contVidas.setValue(3);
+        Conel conel = new Conel();
+        addObject(conel,322,375);
+        Burbuja1 burbuja1 = new Burbuja1();
+        addObject(burbuja1,289,109);
         
         prepare();
         contTiempo.setValue(TIEMPO_NIVEL);
@@ -41,7 +45,6 @@ public class Strokworld extends World
     }
 
      public void act(){
-         
         
          if(reloj.millisElapsed()>1000){
         contTiempo.add(-1);
@@ -59,12 +62,12 @@ public class Strokworld extends World
     {
         contBurbujas.add(1);
   
-        if(contBurbujas.getValue()==100){
+        if(contBurbujas.getValue()==7){
             Label etiquetaWINNER = new Label("WINNER:Conel",55);
             addObject(etiquetaWINNER,350,250);
   
             Greenfoot.stop();
-            
+            Greenfoot.setWorld(new Nivel2());
 
         }
     }
@@ -72,18 +75,19 @@ public class Strokworld extends World
     public void decrementaVidas()
     {
         contVidas.add(-1);
-        
+       
     }
     
     public void conelAtrapado(){
         decrementaVidas();
-        //conel.setLocation(222,500);
-        //Burbuja.setLocation(15,87);
-        
-        if(contVidas.getValue()==0){
+       
+       if(contVidas.getValue()==0)
+       {
+            contVidas.setValue(0);
             Label etiquetaFin = new Label("Game Over",55);
             addObject(etiquetaFin,250,250);
             Greenfoot.stop();
+            Greenfoot.setWorld(new Menu());
         }
 
     
@@ -96,13 +100,11 @@ public class Strokworld extends World
      */
     private void prepare()
     {
-        Conel conel = new Conel();
-        addObject(conel,222,375);
-        Burbuja1 burbuja1 = new Burbuja1();
-        addObject(burbuja1,187,87);
         contTiempo = new Counter("Tiempo:");
         addObject(contTiempo,533,23);
     }
+
+
     public void disparaarma(int xmouse,int x,int ymouse, int y)
     {
         Bala bala1=new Bala(xmouse,ymouse);

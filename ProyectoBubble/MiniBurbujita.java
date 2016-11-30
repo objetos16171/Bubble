@@ -35,15 +35,14 @@ public class MiniBurbujita extends Burbuja1
             velY = -velY;
         } 
         
-          if(isTouching(Bala.class)){  
-            removeTouching(Bala.class); 
-        }
-        
         if (isTouching(Conel.class))
        {
+            removeTouching(Conel.class);
            World mundo = getWorld();
            ((Strokworld)mundo).conelAtrapado();
-          
+            Conel conel = new Conel ();
+           ((Strokworld)mundo).addObject(conel,getX()+200,getY());
+        
        }
     }
 }
