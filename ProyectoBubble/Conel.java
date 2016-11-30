@@ -48,7 +48,7 @@ public class Conel extends Actor
             setLocation(getX()+MOV,getY());
         }
         
-        if(getY()<=380 && !Greenfoot.isKeyDown("up"))
+        if(getY()<=380 && !Greenfoot.isKeyDown("up") && !isTouching(Plataforma.class) && !isTouching(PlataformaMov.class))
         {
              setLocation(getX(),getY()+GRAVEDAD);
         }
