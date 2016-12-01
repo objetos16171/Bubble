@@ -179,20 +179,28 @@ public class Strokworld extends World
     }
 
 
-    public void disparaarma(int xmouse,int x,int ymouse, int y)
+    public void disparaarma(int xmouse,int x,int ymouse, int y,int arma)
     {
+         if(arma==0)
+        {
         Bala bala1=new Bala(xmouse,ymouse);
          addObject(bala1,x,y);
-       /*  
-        System.out.println("X del mouse:");
-        System.out.println(xmouse);
-        System.out.println("Y del mouse");
-        System.out.println(ymouse);
-        System.out.println("X inicial");
-        System.out.println(x);
-        System.out.println("Y inicial");
-        System.out.println(y);
-        */
+        }
+        if(arma==1)
+        {
+            Laser laser1=new Laser(xmouse,ymouse);
+            addObject(laser1,x,y);
+        }
+        if(arma==2)
+        {
+             Escopeta escopeta1=new Escopeta(xmouse,ymouse);
+            addObject(escopeta1,x,y);
+        }
+        if(arma==3){
+             Misil misil1=new Misil(xmouse,ymouse);
+            addObject(misil1,x,y);
+            
+        }
         
     }
     
