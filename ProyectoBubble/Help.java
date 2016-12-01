@@ -26,7 +26,7 @@ public class Help extends Actor
     
     public void act() 
     {
-        turn(1);
+        //turn(1);
         setLocation(getX()+velX,getY()+velY);
         if(getX()<=50 || getX() >= 550 || isTouching(Start.class) || isTouching(Exit.class))
         {

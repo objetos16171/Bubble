@@ -8,12 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class vida extends Actor
 {
-    /**
-     * Act - do whatever the vida wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int GRAVEDAD = 1;
     public void act() 
     {
-        // Add your action code here.
+        if(isTouching(Conel.class))
+        {
+            World mundo = getWorld();
+            ((Strokworld)mundo).vidaExtra();
+            ((Strokworld)mundo).removeObject(this);
+        }
+        /*if(getY()<=380)
+        {
+             setLocation(getX(),getY()+GRAVEDAD);
+        }*/
     }    
 }

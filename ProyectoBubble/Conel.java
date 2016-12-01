@@ -14,7 +14,7 @@ public class Conel extends Actor
      */
      public final int GRAVEDAD=8;
      public final int MOV=4;
-     public final int SALTO=9;
+     public final int SALTO=10;
      private String conelI = "conel_opt2.png";
      private String conelD = "conel_opt.png";
      private MouseInfo mouse;
@@ -26,7 +26,7 @@ public class Conel extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.isKeyDown("up"))
+        if(conelD != "conel_opt.png" && Greenfoot.isKeyDown("W") || isTouching(Escalera.class) && Greenfoot.isKeyDown("W"))
         {
             if(conelD == "conel_opt_jet.png")
             {
@@ -36,13 +36,13 @@ public class Conel extends Actor
             setLocation(getX(),getY()-SALTO);  
         }
         
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("A"))
         {
             setImage(conelI);
             setLocation(getX()-MOV,getY());
         }
         
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("D"))
         {
             setImage(conelD);
             setLocation(getX()+MOV,getY());

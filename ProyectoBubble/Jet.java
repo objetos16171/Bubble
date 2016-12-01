@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jet extends Actor
 {
-    /**
-     * Act - do whatever the Jet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int GRAVEDAD = 1;
     public void act() 
     {
         if(isTouching(Conel.class))
@@ -19,5 +16,9 @@ public class Jet extends Actor
             World mundo = getWorld();
             mundo.removeObject(this);
         }
-    }    
+        /*if(getY()<=380)
+        {
+             setLocation(getX(),getY()+GRAVEDAD);
+        }*/
+    }
 }

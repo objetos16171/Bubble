@@ -8,15 +8,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nivel3 extends Strokworld
 {
-
-    /**
-     * Constructor for objects of class Nivel3.
-     * 
-     */
+    private int hab1, hab2, hab3;
     public Nivel3()
     {
         Greenfoot.start();
         prepare();
+        Greenfoot.delay(100);
+    }
+    
+    public void act()
+    {
+        hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
+        
+        if(hab1 == 25)
+        {
+            vida vidaE = new vida();
+            addObject(vidaE,Greenfoot.getRandomNumber(600),375);
+        }
+        if(hab2 == 35)
+        {
+            Jet jet = new Jet();
+            addObject(jet,Greenfoot.getRandomNumber(600),375);
+        }
+        if(Greenfoot.isKeyDown("R"))
+        {
+            Greenfoot.setWorld(new Nivel4());
+        }
     }
 
     /**

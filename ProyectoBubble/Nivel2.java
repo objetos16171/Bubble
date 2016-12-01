@@ -8,16 +8,32 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nivel2 extends Strokworld 
 {
-    /**
-     * Constructor for objects of class Nivel2.
-     * 
-     */
+    private int hab1, hab2, hab3;
     public Nivel2()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-      Greenfoot.start();
+    {
         prepare();
+        Greenfoot.start();
+        Greenfoot.delay(100);
+    }
+    
+    public void act()
+    {
+       hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
+        if(hab1 == 25)
+        {
+            vida vidaE = new vida();
+            addObject(vidaE,Greenfoot.getRandomNumber(600),375);
+        }
+        if(hab2 == 35)
+        {
+            Jet jet = new Jet();
+            addObject(jet,Greenfoot.getRandomNumber(600),375);
+        }
+        if(Greenfoot.isKeyDown("R"))
+        {
+            Greenfoot.setWorld(new Nivel3());
+        }
     }
         
     /**
@@ -38,6 +54,17 @@ public class Nivel2 extends Strokworld
         plataforma.setLocation(285,230);
         removeObject(plataforma);
         plataforma3.setLocation(552,216);
+        Escalera escalera = new Escalera();
+        addObject(escalera,563,358);
+        escalera.setLocation(560,351);
+        Escalera escalera2 = new Escalera();
+        addObject(escalera2,495,262);
+        Escalera escalera3 = new Escalera();
+        addObject(escalera3,192,323);
+        escalera2.setLocation(560,254);
+        escalera3.setLocation(63,354);
+        plataforma2.setLocation(62,310);
+        plataforma3.setLocation(552,210);
     }
 
 }

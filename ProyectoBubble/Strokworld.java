@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Strokworld extends World 
 {
     public final int TIEMPO_NIVEL=60;
+    private int hab1, hab2, hab3;
+    private int hay1, hay2, hay3;
     private Counter contBurbujas;
     private Counter contTiempo;
     private Counter contVidas;
@@ -16,10 +18,7 @@ public class Strokworld extends World
     private SimpleTimer relojworm;
     private Burbuja1 burbuja;
     private vida vida;
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+
     public Strokworld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -27,12 +26,13 @@ public class Strokworld extends World
         contBurbujas = new Counter("Puntaje: ");
         addObject(contBurbujas,58,22);
         contVidas = new Counter("Vidas: ");
-        addObject(contVidas,285,22);
+        //addObject(contVidas,285,22);
         contVidas.setValue(3);
         Conel conel = new Conel();
         addObject(conel,322,375);
         Burbuja1 burbuja1 = new Burbuja1();
         addObject(burbuja1,289,109);
+        //contVidas.setImage("3Life2.png");
 
         prepare();
         contTiempo.setValue(TIEMPO_NIVEL);
@@ -41,15 +41,36 @@ public class Strokworld extends World
         
     }
 
-     public void act(){
+     public void act()
+     {
+        hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
-         if(reloj.millisElapsed()>1000){
-        contTiempo.add(-1);
-        reloj.mark();
-    }
-        
-        if(contTiempo.getValue()==0){
-           Greenfoot.stop();
+        if(hab1 == 25)
+        {
+            vida vidaE = new vida();
+            addObject(vidaE,Greenfoot.getRandomNumber(600),375);
+        }
+        if(hab2 == 35)
+        {
+            Jet jet = new Jet();
+            addObject(jet,Greenfoot.getRandomNumber(600),375);
+        }
+        /*if(hab3 == 15 || hab3 == 65)
+        {
+            vida vidaE = new vida();
+        }*/
+        if(Greenfoot.isKeyDown("R"))
+        {
+            Greenfoot.setWorld(new Nivel2());
+        }
+         if(reloj.millisElapsed()>1000)
+         {
+             contTiempo.add(-1);
+             reloj.mark();
+        }
+        if(contTiempo.getValue()==0)
+        {
+          Greenfoot.stop();
           Greenfoot.setWorld(new GameOver());  
         }
     }
@@ -67,15 +88,35 @@ public class Strokworld extends World
         }
     }
     
+    public void hayHabilidad()
+    {
+        
+    }
+    
     public void decrementaVidas()
     {
         contVidas.add(-1);
-       removeObject(vida);
-       
     }
     
-    public void conelAtrapado(){
-        decrementaVidas();
+    public void vidaExtra()
+    {
+        if(contVidas.getValue() < 3)
+        {
+            contVidas.add(1);
+        }else
+        {
+            contVidas.add(0);
+        }
+    }
+    
+    public int numVidas()
+    {
+        return contVidas.getValue();
+    }
+    
+    public void conelAtrapado()
+    {
+       decrementaVidas();
        
        if(contVidas.getValue()==0)
        {   
@@ -107,6 +148,9 @@ public class Strokworld extends World
         removeObject(vida3);
         removeObject(vida2);
         removeObject(vida);
+        Vidas vidas = new Vidas();
+        addObject(vidas,297,24);
+        vidas.setLocation(288,16);
     }
 
 
@@ -114,7 +158,16 @@ public class Strokworld extends World
     {
         Bala bala1=new Bala(xmouse,ymouse);
          addObject(bala1,x,y);
-       
+       /*  
+        System.out.println("X del mouse:");
+        System.out.println(xmouse);
+        System.out.println("Y del mouse");
+        System.out.println(ymouse);
+        System.out.println("X inicial");
+        System.out.println(x);
+        System.out.println("Y inicial");
+        System.out.println(y);
+        */
         
     }
     
