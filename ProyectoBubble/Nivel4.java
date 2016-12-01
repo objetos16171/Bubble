@@ -32,12 +32,12 @@ public class Nivel4 extends Strokworld
         if(hab1 == 25)
         {
             vida vidaE = new vida();
-            addObject(vidaE,Greenfoot.getRandomNumber(600),375);
+            addObject(vidaE,Greenfoot.getRandomNumber(600),75);
         }
         if(hab2 == 35)
         {
             Jet jet = new Jet();
-            addObject(jet,Greenfoot.getRandomNumber(600),375);
+            addObject(jet,Greenfoot.getRandomNumber(600),75);
         }
         if(Greenfoot.isKeyDown("R"))
         {
