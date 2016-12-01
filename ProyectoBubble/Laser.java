@@ -1,29 +1,22 @@
-import greenfoot.*; 
-import java.lang.Math; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bala here.
+ * Write a description of class Laser here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-
-
-public class Bala extends Actor
+public class Laser extends Actor
 {
-    /**
-     * Act - do whatever the Bala wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-     private int dirx;
+      private int dirx;
      private int diry;
-     private int vel=3;
+     private int vel=6;
      private int bandera=1;
      
      World mundo=getWorld();
      
      
-    public Bala(int x,int y)
+    public Laser(int x,int y)
     {
     super();
     dirx=x;

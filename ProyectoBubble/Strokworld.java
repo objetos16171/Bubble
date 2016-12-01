@@ -114,16 +114,7 @@ public class Strokworld extends World
     {
         Bala bala1=new Bala(xmouse,ymouse);
          addObject(bala1,x,y);
-       /*  
-        System.out.println("X del mouse:");
-        System.out.println(xmouse);
-        System.out.println("Y del mouse");
-        System.out.println(ymouse);
-        System.out.println("X inicial");
-        System.out.println(x);
-        System.out.println("Y inicial");
-        System.out.println(y);
-        */
+       
         
     }
     
