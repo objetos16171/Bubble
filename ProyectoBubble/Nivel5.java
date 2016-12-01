@@ -13,7 +13,7 @@ public class Nivel5 extends Strokworld
      * Constructor for objects of class Nivel5.
      * 
      */
-    GreenfootSound musicafondo = new GreenfootSound("nivel5.mp3");
+    
     public Nivel5()
     {  
         prepare();
@@ -38,10 +38,7 @@ public class Nivel5 extends Strokworld
             Greenfoot.setWorld(new Win());
         }
         
-        if(!musicafondo.isPlaying())
-        {
-            musicafondo.playLoop();
-        }
+        
     }
     
     private void prepare()
@@ -68,8 +65,5 @@ public class Nivel5 extends Strokworld
         bowser.setLocation(310,254);
     }
     
-    public void apagamusica()
-    {
-        musicafondo.stop();
-    }
+    
 }

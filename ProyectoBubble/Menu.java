@@ -13,6 +13,7 @@ public class Menu extends World
      * Constructor for objects of class Menu.
      * 
      */
+    GreenfootSound musicafondo = new GreenfootSound("musicamenu.mp3");
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -52,5 +53,16 @@ public class Menu extends World
         help.setLocation(101,287);
         start.setLocation(294,218);
         exit.setLocation(494,298);
+    }
+    public void act()
+    {
+      if(!musicafondo.isPlaying())
+        {
+            musicafondo.playLoop();
+        }  
+    }
+    public void apagamusica()
+    {
+        musicafondo.stop();
     }
 }

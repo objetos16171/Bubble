@@ -18,6 +18,8 @@ public class Strokworld extends World
     private SimpleTimer relojworm;
     private Burbuja1 burbuja;
     private vida vida;
+    
+    GreenfootSound musicafondo = new GreenfootSound("musicajuego.mp3");
 
     public Strokworld()
     {    
@@ -73,6 +75,10 @@ public class Strokworld extends World
           Greenfoot.stop();
           Greenfoot.setWorld(new GameOver());  
         }
+        if(!musicafondo.isPlaying())
+        {
+            musicafondo.playLoop();
+        }
     }
     
     public void incrementaPuntaje()
@@ -122,6 +128,7 @@ public class Strokworld extends World
        {   
            contVidas.setValue(0);
            Greenfoot.stop();
+           apagamusica();
            Greenfoot.setWorld(new GameOver());  
             
         }
@@ -171,5 +178,8 @@ public class Strokworld extends World
         
     }
     
-    
+    public void apagamusica()
+    {
+        musicafondo.stop();
+    }
 }

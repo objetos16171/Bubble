@@ -38,6 +38,8 @@ public class Start extends Actor
         }
         if(Greenfoot.mouseClicked(this))
         {
+            World mundo1=getWorld();
+           ((Menu)mundo1).apagamusica();
             Greenfoot.setWorld(new Strokworld());
         }
     }    

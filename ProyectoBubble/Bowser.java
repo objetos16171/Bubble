@@ -54,12 +54,12 @@ public class Bowser extends Burbuja1
             vida=vida-1;         
         }
         
-        if(vida<=0)
-        {   World mundo1=getWorld();
-           ((Nivel5)mundo1).apagamusica();
+       if(vida<=0)
+        {  /* World mundo1=getWorld();
+           ((Nivel5)mundo1).apagamusica();*/
            Greenfoot.setWorld(new Win());
         }   
-        
+       
         
     }    
 }
