@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 /**
  * Write a description of class MinBurbuja here.
  * 
@@ -37,7 +38,8 @@ public class MinBurbuja extends Burbuja1
         
         if(isTouching(Bala.class)){  
             
-            World mundo=getWorld();
+            World mundo = getWorld();
+            
             MiniBurbujita burbujita1 = new MiniBurbujita();
             MiniBurbujita burbujita2 = new MiniBurbujita(); 
             ((Strokworld)mundo).addObject(burbujita1,getX()+10,getY()+10);

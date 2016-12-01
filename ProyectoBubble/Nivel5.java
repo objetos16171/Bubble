@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 /**
  * Write a description of class Nivel5 here.
  * 
@@ -16,11 +17,20 @@ public class Nivel5 extends Strokworld
     
     public Nivel5()
     {  
+        Greenfoot.start();
         prepare();
         Greenfoot.delay(100);
     }
     public void act()
     {
+        List lista=getObjects(Bowser.class);
+        
+            if(  lista.size()==0){
+             Label etiquetaFin = new Label("WINNER",55);
+             addObject(etiquetaFin,250,250);
+             Greenfoot.stop();
+             Greenfoot.setWorld(new Win());
+            }
         hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
         if(hab1 == 25)
@@ -61,8 +71,9 @@ public class Nivel5 extends Strokworld
         Plataforma plataforma4 = new Plataforma();
         addObject(plataforma4,57,378);
         Bowser bowser = new Bowser();
-        addObject(bowser,147,123);
+        addObject(bowser,302,97);
         bowser.setLocation(310,254);
+        bowser.setLocation(304,97);
     }
     
     

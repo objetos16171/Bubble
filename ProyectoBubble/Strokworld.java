@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 
 /**
  * Esta clase , es clase mundo del Juego.
@@ -32,8 +34,7 @@ public class Strokworld extends World
         contVidas.setValue(3);
         Conel conel = new Conel();
         addObject(conel,322,375);
-        Burbuja1 burbuja1 = new Burbuja1();
-        addObject(burbuja1,289,109);
+        
         //contVidas.setImage("3Life2.png");
 
         prepare();
@@ -45,6 +46,16 @@ public class Strokworld extends World
 
      public void act()
      {
+        List lista=getObjects(MiniBurbujita.class);
+        
+            if(  lista.size()==0){
+             Label etiquetaFin = new Label("WINNER",55);
+             addObject(etiquetaFin,250,250);
+             Greenfoot.stop();
+             Greenfoot.setWorld(new Nivel2());
+            }
+            
+         
         hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
         if(hab1 == 25)
@@ -85,7 +96,7 @@ public class Strokworld extends World
     {
         contBurbujas.add(1);
         
-        if(contBurbujas.getValue()==7){
+        if(contBurbujas.getValue()==117){
             Label etiquetaWINNER = new Label("WINNER:Conel",55);
             addObject(etiquetaWINNER,350,250);
             Greenfoot.stop();
@@ -158,6 +169,13 @@ public class Strokworld extends World
         Vidas vidas = new Vidas();
         addObject(vidas,297,24);
         vidas.setLocation(288,16);
+
+        MiniBurbujita miniburbujita = new MiniBurbujita();
+        addObject(miniburbujita,205,79);
+        MiniBurbujita miniburbujita2 = new MiniBurbujita();
+        addObject(miniburbujita2,306,189);
+        MiniBurbujita miniburbujita3 = new MiniBurbujita();
+        addObject(miniburbujita3,399,83);
     }
 
 

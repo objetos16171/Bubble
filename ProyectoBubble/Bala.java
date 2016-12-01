@@ -1,5 +1,7 @@
 import greenfoot.*; 
 import java.lang.Math; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 
 /**
  * Write a description of class Bala here.
@@ -44,20 +46,15 @@ public class Bala extends Actor
             World mundo = getWorld();
             ((Strokworld)mundo). incrementaPuntaje();
         }
-        else{
-            if(isTouching(MinBurbuja.class))
-            {
-               removeTouching(MinBurbuja.class); 
-               World mundo = getWorld();
-            ((Strokworld)mundo). incrementaPuntaje();
-            }
-            else{
-                if(isTouching(MinBurbuja.class)){
-                    removeTouching(MiniBurbujita.class);
-                    World mundo = getWorld();
-                    ((Strokworld)mundo). incrementaPuntaje();
-                }
-            }
+        if(isTouching(MinBurbuja.class))
+        {
+           removeTouching(MinBurbuja.class); 
+           World mundo = getWorld();
+           ((Strokworld)mundo). incrementaPuntaje();
+        }           
+        if(isTouching(MinBurbuja.class)){
+                removeTouching(MiniBurbujita.class);
+                ((Strokworld)mundo). incrementaPuntaje();
         }
         
         

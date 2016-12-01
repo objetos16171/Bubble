@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 /**
  * Write a description of class Nivel4 here.
  * 
@@ -18,6 +19,14 @@ public class Nivel4 extends Strokworld
     
     public void act()
     {
+        List lista=getObjects(MiniBurbujita.class);
+        
+            if(  lista.size()==0){
+             Label etiquetaFin = new Label("WINNER",55);
+             addObject(etiquetaFin,250,250);
+             Greenfoot.stop();
+             Greenfoot.setWorld(new Nivel5());
+            }
         hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
         if(hab1 == 25)
@@ -42,18 +51,7 @@ public class Nivel4 extends Strokworld
      */
     private void prepare()
     {
-        MinBurbuja minburbuja = new MinBurbuja();
-        addObject(minburbuja,142,128);
-        MinBurbuja minburbuja2 = new MinBurbuja();
-        addObject(minburbuja2,465,141);
-        MiniBurbujita miniburbujita = new MiniBurbujita();
-        addObject(miniburbujita,401,66);
-        MiniBurbujita miniburbujita2 = new MiniBurbujita();
-        addObject(miniburbujita2,191,63);
-        MiniBurbujita miniburbujita3 = new MiniBurbujita();
-        addObject(miniburbujita3,209,182);
-        MiniBurbujita miniburbujita4 = new MiniBurbujita();
-        addObject(miniburbujita4,412,169);
+
         Plataforma plataforma = new Plataforma();
         addObject(plataforma,547,351);
         Plataforma plataforma2 = new Plataforma();
@@ -65,7 +63,14 @@ public class Nivel4 extends Strokworld
         plataforma4.setLocation(58,195);
         PlataformaMov plataformamov = new PlataformaMov();
         addObject(plataformamov,297,274);
-        removeObject(miniburbujita3);
-        removeObject(miniburbujita4);
+
+        MinBurbuja minburbuja = new MinBurbuja();
+        addObject(minburbuja,310,89);
+        MinBurbuja minburbuja2 = new MinBurbuja();
+        addObject(minburbuja2,532,96);
+        removeObject(minburbuja2);
+        removeObject(minburbuja);
+        MinBurbuja minburbuja3 = new MinBurbuja();
+        addObject(minburbuja3,301,97);
     }
 }

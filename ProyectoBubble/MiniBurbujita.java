@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 /**
  * Write a description of class MiniBurbujita here.
  * 
@@ -34,7 +35,7 @@ public class MiniBurbujita extends Burbuja1
         {
             velY = -velY;
         } 
-        
+      
         if (isTouching(Conel.class))
        {
             removeTouching(Conel.class);

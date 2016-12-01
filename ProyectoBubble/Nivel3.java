@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import  java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import  java.util.ListIterator;  
 /**
  * Write a description of class Nivel3 here.
  * 
@@ -18,6 +19,14 @@ public class Nivel3 extends Strokworld
     
     public void act()
     {
+        List lista=getObjects(MiniBurbujita.class);
+        
+            if(  lista.size()==0){
+             Label etiquetaFin = new Label("WINNER",55);
+             addObject(etiquetaFin,250,250);
+             Greenfoot.stop();
+             Greenfoot.setWorld(new Nivel4());
+            }
         hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
         
         if(hab1 == 25)

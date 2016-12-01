@@ -29,5 +29,10 @@ public class GameOver extends World
     {
         Back back = new Back();
         addObject(back,305,332);
+        Back back2 = new Back();
+        addObject(back2,314,343);
+        back2.setLocation(428,342);
+        removeObject(back);
+        back2.setLocation(324,335);
     }
 }
