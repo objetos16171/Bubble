@@ -30,13 +30,12 @@ public class Nivel2 extends Strokworld
             }
             
        hab1 = hab2 = hab3 = Greenfoot.getRandomNumber(5000);
-        
-        if(hab1 == 25)
+        if(hab1 == 25 || Greenfoot.isKeyDown("J"))
         {
             vida vidaE = new vida();
             addObject(vidaE,Greenfoot.getRandomNumber(600),75);
         }
-        if(hab2 == 35)
+        if(hab2 == 35 || Greenfoot.isKeyDown("K"))
         {
             Jet jet = new Jet();
             addObject(jet,Greenfoot.getRandomNumber(600),75);

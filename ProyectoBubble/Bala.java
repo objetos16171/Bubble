@@ -57,14 +57,12 @@ public class Bala extends Actor
                 ((Strokworld)mundo). incrementaPuntaje();
         }
         
-        
-        
-        
-        if(getX()> 590 || getX()< 10 || getY()> 390 || getY()< 10 )
+        move(vel); 
+       if(getX()> 590 || getX()< 10 || getY()> 390 || getY()< 10 )
         {
           remuevebala();
          
-        }
+        }else
         if(getX()<=(dirx+10) && getX()>=(dirx-10) )
         {
             if( getY()<=(diry+10) && getY()>=(diry-10) )
@@ -78,7 +76,9 @@ public class Bala extends Actor
         
             }
         }
-       move(vel); 
+        
+        
+         
     } 
 
 
