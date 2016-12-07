@@ -1,25 +1,44 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Bubble by objetos16171</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Bubble</h1>
-      <h2 class="project-tagline">Todo comienza con una Explocion</h2>
-      <a href="https://github.com/objetos16171/Bubble" class="btn">View on GitHub</a>
-      <a href="https://github.com/objetos16171/Bubble/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/objetos16171/Bubble/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/objetos16171/Bubble">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/objetos16171/Bubble/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/objetos16171/Bubble/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <section class="main-content">
-      <h3>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Bubble</h1>
+          <p>Todo comienza con una Explocion</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/objetos16171">objetos16171</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>
 <a id="presentación" class="anchor" href="#presentaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Presentación</h3>
 
 <p>Bubble es un shooter en tercera persona donde se tendrá que encarnar a conel un joven entusiasta de la ingeniería quien por accidente termina en una dimensión desconocida en la que descubrirá que existen diferentes tipos de enemigos por más gracioso que parezca y a los cuales deberá vencer si desea poder regresar a su dimensión.</p>
@@ -44,46 +63,56 @@ La tribu Mink al saber que Conel iba a ir hasta al castillo a conseguir la fuent
 <h3>
 <a id="personajes-y-controles" class="anchor" href="#personajes-y-controles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Personajes y controles</h3>
 
-<p>CONEL: Es el héroe y personaje principal de la historia controlado por el jugador, el cual tendrá que avanzar por diversos niveles para al final derrotar al jefe y poder regresar a su mundo. En los niveles deberá moverse, subir plataformas y brincar para eludir a los enemigos mientras intenta vencerlos con la ayuda de armas y habilidades que irá consiguiendo en el camino.</p>
+<p><strong>CONEL</strong>: Es el héroe y personaje principal de la historia controlado por el jugador, el cual tendrá que avanzar por diversos niveles para al final derrotar al jefe y poder regresar a su mundo. En los niveles deberá moverse, subir plataformas y brincar para eludir a los enemigos mientras intenta vencerlos con la ayuda de armas y habilidades que irá consiguiendo en el camino.</p>
 
-<p>MINK: Una pequeña tribu que ayudará al héroe en su aventura para derrotar a las burbujas y poder regresarlo a su casa.</p>
+<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/conel_opt.png?raw=true" alt=""></p>
 
-<p>BURBUJAS: Son el enemigo del héroe y la tribu Mink, existen diferentes tipos de burbujas:</p>
+<p><strong>MINK</strong>: Una pequeña tribu que ayudará al héroe en su aventura para derrotar a las burbujas y poder regresarlo a su casa.</p>
 
-<p>Cafes: son las más comunes y fáciles de derrotar se van moviendo aleatoriamente por el nivel y cada vez que reciben daño se dividen y se vuelven más pequeñas.</p>
+<p><strong>BURBUJAS</strong>: Son el enemigo del héroe y la tribu Mink, existen diferentes tipos de burbujas:</p>
+
+<p><strong>Cafes</strong>: son las más comunes y fáciles de derrotar se van moviendo aleatoriamente por el nivel y cada vez que reciben daño se dividen y se vuelven más pequeñas.</p>
 
 <p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/burbuja.png?raw=true" alt=""></p>
 
-<p>Rojas: son parecidas a las azules con la diferencia de que son un poco más rápidas y resistentes.</p>
+<p><strong>Rojas</strong>: son parecidas a las azules con la diferencia de que son un poco más rápidas y resistentes.</p>
 
 <p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/MiniBurbujas.png?raw=true" alt=""></p>
 
-<p>Jefe: Cuentan con una habilidad especial con la cual liberan mas burbujas rojas.</p>
+<p><strong>Jefe</strong>: Cuentan con una habilidad especial con la cual liberan mas burbujas rojas.</p>
 
 <p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/bowser_opt.png?raw=true" alt=""></p>
 
-<p>Movimiento: El jugador tendrá la posibilidad de moverse a los lados, de abajo hacia  arriba y viceversa y saltar en caso de ser necesario.</p>
+<p><strong>Movimiento</strong>: El jugador tendrá la posibilidad de moverse a los lados, de abajo hacia  arriba y viceversa y saltar en caso de ser necesario.</p>
 
-<p>Armas: El jugador contará con un arma principal la cual llevará en todos los niveles y podrá usarla sin ningun limite, durante los niveles podrá conseguir un arma diferente la cual le facilitara el terminar el nivel.</p>
+<p><strong>Armas</strong>: El jugador contará con un arma principal la cual llevará en todos los niveles y podrá usarla sin ningun limite, durante los niveles podrá conseguir un arma diferente la cual le facilitara el terminar el nivel.</p>
 
-<p>Habilidades: Se contará con habilidades que el jugador podrá usar a su favor para conseguir superar los niveles.</p>
+<p><strong>Habilidades</strong>: Se contará con habilidades que el jugador podrá usar a su favor para conseguir superar los niveles.
+<img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/Life.png?raw=true" alt="">
+<img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/Jet_Pack_icon2.png?raw=true" alt=""></p>
 
-<p>Niveles: Los niveles contarán con diferentes características cada uno, como plataformas con escaleras para acceder a ellas y plataformas en movimiento.</p>
+<p><strong>Niveles</strong>: Los niveles contarán con diferentes características cada uno, como plataformas con escaleras para acceder a ellas y plataformas en movimiento.</p>
 
-<p>Enemigos: Los enemigos se moverán aleatoriamente por los niveles  para dificultar el paso del jugador.</p>
+<p><strong>Enemigos</strong>: Los enemigos se moverán aleatoriamente por los niveles  para dificultar el paso del jugador.</p>
 
 <h3>
 <a id="mundos" class="anchor" href="#mundos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mundos</h3>
 
 <p>Primer Nivel: El mundo es plano sin ninguna dificultad para que el usuario ven la movilidad del personaje.</p>
 
+<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/MTM2NDU2MTg4MTgyMTQ0NjA3.png?raw=true" alt=""></p>
+
 <p>Segundo Nivel: El mundo tiene plataformas altas el cual el usuario podrá subir por escaleras para poder escapar del enemigo o poder disparar desde una mejor posición.</p>
 
-<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/Mick.png?raw=true" alt=""></p>
+<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/FWG_2560x1440_F4BWrsZ.png?raw=true" alt=""></p>
 
 <p>Tercer Nivel: El mundo cambia con plataforma en movimiento lo cual hace que el personaje tenga dificultades de moverse.</p>
 
+<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/Mick.png?raw=true" alt=""></p>
+
 <p>Cuarto Nivel: El mundo tiene plataformas que giras de un lado para otro o como las manecillas del reloj, para que sea más complicado destruir a los enemigos.</p>
+
+<p><img src="https://github.com/objetos16171/Bubble/blob/master/ProyectoBubble/images/Nivel%204.jpg?raw=true" alt=""></p>
 
 <p>Quinto Nivel: El mundo lleva partes de los otros mundo y el jefe de los enemigos aparece.</p>
 
@@ -98,14 +127,18 @@ La tribu Mink al saber que Conel iba a ir hasta al castillo a conseguir la fuent
 
 <p>Ayrton Enrique Espinoza Rico (<a href="https://github.com/AyrtonEs" class="user-mention">@AyrtonEs</a>)</p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/objetos16171/Bubble">Bubble</a> is maintained by <a href="https://github.com/objetos16171">objetos16171</a>.</span>
+<h3>
+<a id="extra" class="anchor" href="#extra" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra</h3>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<p><strong>Video</strong>:</p>
 
-    </section>
+<p><strong>Juega</strong>:</p>
 
-  
+<p><strong>Diagrama</strong>:</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
